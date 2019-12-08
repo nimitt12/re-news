@@ -1,0 +1,35 @@
+<ion-header>
+    <ion-toolbar>
+      <ion-title>ReNews</ion-title>
+    </ion-toolbar>
+
+    <ion-toolbar color="primary">
+        <ion-title>Top Trending News</ion-title>
+    </ion-toolbar>
+    
+  </ion-header>
+<ion-content>
+        
+    <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content
+          pullingIcon="arrow-dropdown"
+          pullingText="Pull to refresh every 15 min"
+          refreshingSpinner="circles"
+          refreshingText="Refreshing...">
+        </ion-refresher-content>
+    </ion-refresher>
+    
+    <ion-list>
+        <h2 class="item-text-wrap"></h2>
+        <ion-progress-bar value="0.25" buffer="0.5"></ion-progress-bar>
+      </ion-list>
+    <ion-card *ngFor="let article of data?.articles" (click)="onGoToNewsSinglePage(article)">
+        <img [src]="article.urlToImage" />
+        <ion-card-header>
+          <ion-card-subtitle>{{article.author}}</ion-card-subtitle>
+          <ion-card-title>{{article.title}}</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>Read More...
+        </ion-card-content>
+    </ion-card>
+</ion-content>
