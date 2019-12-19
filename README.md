@@ -8,7 +8,8 @@ ReNews is open source application for reading trending and local news at a glanc
 
 Go to this [apk folder](https://github.com/nimitt12/re-news) and install apk file in any android phone.
 
-Supported version Android 7+
+> Supported version Android 7+
+
 
 ```bash
 re-news/apk/re-news.apk
